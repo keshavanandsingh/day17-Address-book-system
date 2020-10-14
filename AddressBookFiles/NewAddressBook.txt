@@ -1,0 +1,1 @@
+Name: First Person	Address: Person	City: Keyboard	State: Console	Zip: 123456	Phone No: 0000000000	Email: typed@system.com

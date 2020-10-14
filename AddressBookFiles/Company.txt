@@ -1,0 +1,5 @@
+Name: Akram Shaheed	Address: 3/40 Berhampore	City: Kolkata	State: WB	Zip: 742100	Phone Number: 9999900000	Email: first@person.com
+Name : Aditi Sharma	Address : 4/11 Vati Nagar	City : Thane	State : MHR	Zip : 625058	Phone Number : 8888888888	Email : sec@person.com
+Name : John Smith	Address : 8/22 Kalyani		City : Kalyani	State : WB	Zip : 729558	Phone Number : 8123400000	Email : third@person.com
+Name : Akhil Jindal	Address : 44/2 Indra Nagar	City : Jabalpur	State : MP	Zip : 284568	Phone Number : 8123443210	Email : fourth@person.com
+Name : Krishna Pauly	Address : 8/11 Podula Road	City : Aluva	State : KRL	Zip : 826123	Phone Number : 7894652222	Email : fifth@person.com
