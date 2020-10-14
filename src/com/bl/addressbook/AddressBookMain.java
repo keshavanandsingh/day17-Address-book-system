@@ -6,7 +6,9 @@ import java.util.*;
 
 public class AddressBookMain {
 	private static HashMap<String, AddressBook> addressBookMap;
-	public static final String ADDRESS_BOOK_FILES = "C:\\Users\\user\\eclipse-workspace\\AddressBook\\AddressBookFiles";
+	private static final String ADDRESS_BOOK_FILES = "C:/Users/user/eclipse-workspace/AddressBook/AddressBookFiles";
+	private static final String ADDRESS_BOOK_CSV_TO_READ = "C:/Users/user/eclipse-workspace/AddressBook/AddressBookCSV/Employees.csv";
+	private static final String ADDRESS_BOOK_CSV_TO_WRITE = "C:/Users/user/eclipse-workspace/AddressBook/AddressBookCSV/TeamMembers.csv";
 	private static Scanner sc = new Scanner(System.in);
 
 	public static void fetchingAddressBooksFromFiles() {
@@ -83,21 +85,20 @@ public class AddressBookMain {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book Program!");
 
-		// Fetching address book from files
-		fetchingAddressBooksFromFiles();
-		// Entering into to main menu
-		// mainMenu();
-
-		AddressBook newAddressBook = new AddressBook("newAddressBook");
-		Path newAdPath = Paths
-				.get("C:\\Users\\user\\eclipse-workspace\\AddressBook\\AddressBookFiles\\NewAddressBook.txt");
-		AddressBookFileIOOperations addressBookFileIOOperations = new AddressBookFileIOOperations(newAdPath);
-		// Using readData method to write using console into the file
-		addressBookFileIOOperations.writeData(newAddressBook.addNewContact());
-		// Sorting each address book
-		for (String adbk : addressBookMap.keySet()) {
-			addressBookMap.get(adbk).sortByCity();
-		}
-
+		/*
+		 * Read CSV data from the Employee.csv file and using readCSVData method and
+		 * print it into console
+		 */
+		AddressBookCSVFileOperations adbkCSVtoRead = new AddressBookCSVFileOperations(
+				Paths.get(ADDRESS_BOOK_CSV_TO_READ));
+		List<Contact> addressBookFetchedFromCSV = adbkCSVtoRead.readCSVData();
+		System.out.println(addressBookFetchedFromCSV);
+		/*
+		 * Fetched data from Employee.csv is used to write into TeamMembers.csv file
+		 * using writeCSVData method
+		 */
+		AddressBookCSVFileOperations adbkCSVtoWrite = new AddressBookCSVFileOperations(
+				Paths.get(ADDRESS_BOOK_CSV_TO_WRITE));
+		adbkCSVtoWrite.writeCSVData(addressBookFetchedFromCSV);
 	}
 }
